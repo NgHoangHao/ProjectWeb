@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Altesa.css">
+    <title>Altesa</title>
+</head>
+
+<body>
+    <header>
+        <section class="menu" id="slider">
+            <div class="layer-first">
+                <div class="logo">
+                    <img src="Images/Logo-White.png" alt="" width="150px">
+                </div>
+                <nav>
+                    <div class="menu-container">
+                        <ul class="main-menu">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li class="has-child-long">
+                                <a href="">Our Villas</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">Our Villas</a></li>
+                                    <li><a href="" class="final">Villa Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-short">
+                                <a href="">Page</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">Our Staff</a></li>
+                                    <li><a href="">Pricing Package</a></li>
+                                    <li><a href="">Gallery</a></li>
+                                    <li><a href="">Testimonials</a></li>
+                                    <li><a href="">FAQ</a></li>
+                                    <li><a href="">404 Page</a></li>
+                                    <li><a href="" class="final">Coming Soon</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-short">
+                                <a href="">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">Blog</a></li>
+                                    <li><a href="" class="final"> Single</a></li>
+                                </ul>
+                            </li>
+                            <li> <a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <a class="Reverse">Reverse Now</a>
+                <h1 class="Experience">Experience The Dream <p class="highlight">Vacation </p>At Altesa</h1>
+                <p class="Note">Escape To Paradise In Our Luxurious Villas & Resorts</p>
+                <nav>
+                    <div class="wrapper-check">
+                        <ul class="second-menu">
+                            <li><a href="">Check In </a></li>
+                            <li><a href="">Check out</a></li>
+                            <li><input type="number" placeholder="Number Of Guest"></li>
+                            <li class="select-villa"><a href="">Select Villa</a>
+                                <ul class="select-menu">
+                                    <li><a href="">Whispering Pines Villa</a></li>
+                                    <li><a href="">Moutain Serentity Villa</a></li>
+                                    <li><a href="">Modern Bliss Villa</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Book Now</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <script>
+                let i = 1;
+                function Slider() {
+                    i++;
+                    if (i > 2) i = 1;
+                    document.getElementById("slider").style.backgroundImage = `url('Images/Slider\ ${i}\ -\ modern-villa-with-pool-and-deck-with-interior.jpg')`;
+                }
+                setInterval(Slider, 3000);
+            </script>
+
+        </section>
+
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="menu-header">
+                <div class="mobile-logo">
+                    <img src="https://www.wordpress.codeinsolution.com/altesa/wp-content/uploads/sites/55/2024/06/Logo-Dark-1.png"
+                        width="100px" alt="Altesa" />
+                </div>
+                <button class="close-menu" onclick="toggleMenu()"><b>X</b></button>
+            </div>
+            <ul class="menu-list">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="has-submenu">
+                    <div class="mobile-list1">
+                        <a href="#" onclick="toggleSubmenu(event, 'villas')">Our Villas</a>
+                        <i class="fa-solid fa-chevron-down submenu-icon"></i>
+                    </div>
+
+                    <ul class="submenu" id="submenu-villas">
+                        <li><a href="#">Our Villas</a></li>
+                        <li><a href="#">Villa Details</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <div class="mobile-list2">
+                        <a href="#" onclick="toggleSubmenu(event, 'pages')">Pages</a>
+                        <i class="fa-solid fa-chevron-down submenu-icon"></i>
+                    </div>
+                    <ul class="submenu" id="submenu-pages">
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <div class="mobile-list3">
+                        <a href="#" onclick="toggleSubmenu(event, 'blog')">Blog</a>
+                        <i class="fa-solid fa-chevron-down submenu-icon"></i>
+                    </div>
+                    <ul class="submenu" id="submenu-blog">
+                        <li><a href="#">Blog List</a></li>
+                        <li><a href="#">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mobileMenu');
+                menu.classList.toggle('open');
+            }
+
+            function toggleSubmenu(event, id) {
+                event.preventDefault();
+                const submenu = document.getElementById(`submenu-${id}`);
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
+
+
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h5>About us</h5>
+                        <h1 class="welcome">Welcome To, <div class="Altesa">Altesa </div> The Best Destination For
+                            Tranquility</h1>
+                        <h6 class="more">More About Us</h6>
+                    </div>
+                    <div class="col-md-7">
+                        <p class="found">Altesa was founded in 1990 with a vision to create exceptional hospitality
+                            experiences that
+                            combine natural beauty with world-class amenities and service. Our commitment to excellence
+                            is reflected in every aspect of our properties, from the thoughtfully designed architecture
+                            to the lush
+                            landscaped gardens.
+                        </p>
+                        <div class="container">
+                            <div class="more-about">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h1 class="k">150 K+</h1>
+                                        <p>Guest Are Served</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="k25">
+                                            <h1 class="k">25</h1>
+                                            <p>Villas & Resorts</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h1 class="k">12+</h1>
+                                        <p>Locations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="about-contain">
+                            <img src="Images/About Us - 1.jpg" alt="" class="aboutus-1">
+                            <div class="video">
+                                <i class="fa-brands fa-google-play"></i>
+                                <p>Play video</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-7">
+                        <img src="Images/About us - 2 - modern-villa-with-pool-and-deck-with-interior-1.jpg" alt=""
+                            class="aboutus-2">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="intro">
+                <h6>Our Villas</h6>
+                <h1>Explore Our Best Villas For An <p class="Altesa">Unforgettable</p> Vacation</h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <article>
+                            <div class="service-wrapper">
+                                <div>
+                                    <img src="Images/Our Villas - 1.jpg" alt="">
+                                </div>
+                                <div class="star">
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star-half-stroke" style="color: rgb(240, 173, 78);"></i>
+                                </div>
+                                <h3>Whispering Pines Villa</h3>
+                                <div class="icon">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <p>4 Beds</p>
+                                    <i class="fa-solid fa-bath"></i>
+                                    <p>3 Baths</p>
+                                    <i class="fa-solid fa-users"></i>
+                                    <p>12 Guests</p>
+                                </div>
+                                <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                                    tellus, luctus nec
+                                    ullamcorper
+                                    mattis,
+                                    pulvinar</p>
+                                <p class="brand">Denpasar</p>
+                            </div>
+                            <div class="price">
+                                <h4>$150.00<sub>
+                                        <p class="Night">/Night</p>
+                                    </sub></h4>
+                                <h6>More Details</h6>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article>
+                            <div class="service-wrapper">
+                                <img src="Images/Our Villas - 2.jpg" alt="">
+                                <div class="star">
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                </div>
+                                <h3>Mountain Serenity Villa</h3>
+                                <div class="icon">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <p>6 Beds</p>
+                                    <i class="fa-solid fa-bath"></i>
+                                    <p>4 Baths</p>
+                                    <i class="fa-solid fa-users"></i>
+                                    <p>14 Guests</p>
+                                </div>
+                                <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                                    tellus, luctus nec
+                                    ullamcorper
+                                    mattis,
+                                    pulvinar</p>
+                                <p class="brand">Bandung</p>
+                            </div>
+                            <div class="price">
+                                <h4>$165.00<sub>
+                                        <p class="Night">/Night</p>
+                                    </sub></h4>
+                                <h6>More Details</h6>
+                            </div>
+
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article>
+                            <div class="service-wrapper">
+                                <img src="Images/Out vilass - 3.jpg" alt="">
+                                <div class="star">
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78)"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                    <i class="fa-solid fa-star" style="color: rgb(240, 173, 78);"></i>
+                                </div>
+                                <h3>Modern Bliss Villa</h3>
+                                <div class="icon">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <p>7 Beds</p>
+                                    <i class="fa-solid fa-bath"></i>
+                                    <p>5 Baths</p>
+                                    <i class="fa-solid fa-users"></i>
+                                    <p>15 Guests</p>
+                                </div>
+                                <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                                    tellus, luctus nec
+                                    ullamcorper
+                                    mattis,
+                                    pulvinar</p>
+                                <p class="brand">Tangerang</p>
+                            </div>
+                            <div class="price">
+                                <h4>$170.00<sub>
+                                        <p class="Night">/Night</p>
+                                    </sub></h4>
+                                <h6>More Details</h6>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-section">
+            <div class="book">
+                <div class="layer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h1>Create Beautiful <p class="highlight">Memmories </p> Full Of Tranquility, Book Your
+                                    Villa Now</h1>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="now">Book Now</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="relative-img">
+                            <img src="Images/Why choose us - 1.jpg" alt="" width="100%" class="relative-img">
+                            <img src="Images/Why choose us - 2.jpg" alt="" width="55%" class="absolute-img">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="reason">
+                            <h5>Why Choose Us ?</h5>
+                            <h1>Reasons To Make Luxe Your Your Place Of <p class="highlight-black">Tranquility</p>
+                            </h1>
+                        </div>
+                        <ul class="menu-why">
+                            <li>
+                                <div class="icon-content">
+                                    <div class="orange-circle">
+                                        <i class="fa-solid fa-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Beautful Architecture</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor
+                                            incididunt ut
+                                            labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-content">
+                                    <div class="orange-circle">
+                                        <i class="fa-solid fa-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Unparalleled Service</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor
+                                            incididunt ut
+                                            labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-content">
+                                    <div class="orange-circle">
+                                        <i class="fa-solid fa-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Exclusive Amenities</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor
+                                            incididunt ut
+                                            labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-content">
+                                    <div class="orange-circle">
+                                        <i class="fa-solid fa-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Best Price Guarantee</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor
+                                            incididunt ut
+                                            labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relativehidden-img">
+                    <img src="Images/Why choose us - 1.jpg" alt="" width="100%">
+                    <img src="Images/Why choose us - 2.jpg" alt="" class="absolute-img">
+                </div>
+            </div>
+        </section>
+        <section class="other-service">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="offer">
+                            <h6>Amenities</h6>
+                            <h1>We Offer Luxurious <p class="Altesa">Amenities</p> Just For You!</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="serviceother-wrapper">
+                            <div class="iconservice-wrapper">
+                                <i class="fa-solid fa-water-ladder"></i>
+                            </div>
+                            <div class="infor-service">
+                                <h4>Private Pools</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="serviceother-wrapper2">
+                            <div class="iconservice-wrapper2">
+                                <i class="fa-solid fa-spa"></i>
+                            </div>
+                            <div class="infor-service">
+                                <h4>Spa Services</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="serviceother-wrapper2">
+                            <div class="iconservice-wrapper2">
+                                <i class="fa-solid fa-golf-ball-tee"></i>
+                            </div>
+                            <div class="infor-service">
+                                <h4>Golf Courses</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="serviceother-wrapper2">
+                            <div class="iconservice-wrapper2">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                            <div class="infor-service">
+                                <h4>Housekeeping</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="serviceother-wrapper2">
+                            <div class="iconservice-wrapper2">
+                                <i class="fa-solid fa-wine-glass"></i>
+                            </div>
+                            <div class="infor-service">
+                                <h4>Restaurants & Mini Bar</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="serviceother-wrapper2">
+                            <div class="iconservice-wrapper2">
+                                <i class="fa-solid fa-dumbbell"></i>
+                            </div>
+                            <div class="infor-service">
+                                <h4>Quality Gym</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="person">
+            <h6>Testimonials</h6>
+            <h1>What Guests <p class="highlight">Saying?</p>
+            </h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="reaction">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="Images/Custome 3.jpg" alt="..." width="70px">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Archer Corbyn</h5>
+                                    <p class="our-cus">Our Customer</p>
+
+                                </div>
+                            </div>
+                            <p class="review">"This villa provided a luxurious yet welcoming atmosphere that made our
+                                vacation truly
+                                special. The
+                                gourmet kitchen allowed us to enjoy some home-cooked meals, while the on-site restaurant
+                                served
+                                delicious local cuisine."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="reaction">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="Images/Customer 4.jpg" alt="..." width="70px">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Chelsea West</h5>
+                                    <p class="our-cus">Our Customer</p>
+                                </div>
+                            </div>
+                            <p class="review">"This villa provided a luxurious yet welcoming atmosphere that made our
+                                vacation truly
+                                special. The
+                                gourmet kitchen allowed us to enjoy some home-cooked meals, while the on-site restaurant
+                                served
+                                delicious local cuisine."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="reaction-show">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="Images/Customer 2.jpg" alt="..." width="70px">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Archer Corbyn</h5>
+                                    <p class="our-cus">Our Customer</p>
+
+                                </div>
+                            </div>
+                            <p class="review">"This villa provided a luxurious yet welcoming atmosphere that made our
+                                vacation truly
+                                special. The
+                                gourmet kitchen allowed us to enjoy some home-cooked meals, while the on-site restaurant
+                                served
+                                delicious local cuisine."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="reaction">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="Images/Customer 1.jpg" alt="..." width="70px">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Dale Mendoza</h5>
+                                    <p class="our-cus">Our Customer</p>
+
+                                </div>
+                            </div>
+                            <p class="review">"This villa provided a luxurious yet welcoming atmosphere that made
+                                our
+                                vacation truly
+                                special. The
+                                gourmet kitchen allowed us to enjoy some home-cooked meals, while the on-site
+                                restaurant
+                                served
+                                delicious local cuisine."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <p class="circle-button">&lt;</p>
+                <p class="circle-button">&gt;</p>
+            </div>
+        </section>
+        <section class="news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h6 class="first-blog">Blog & News</h6>
+                        <h1>Our Latest <p class="Altesa"> Blog</p> & News</h1>
+                    </div>
+                    <div class="col-md-3">
+                        <h6 class="view-all">View All</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="news-blog-1">
+                            <div class="infor-news">
+                                <h3>10 Ways Villas Can Make Your Holiday Enjoyable</h3>
+                                <div class="icon-news">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <p>June 13, 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="news-blog-2">
+                            <div class="infor-news">
+                                <h3>Top 8 destinations & villas you must visit in 2024</h3>
+                                <div class="icon-news">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <p>June 13, 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="news-blog-3">
+                            <div class="infor-news">
+                                <h3>Plan your days and weeks to allocate time for Family</h3>
+                                <div class="icon-news">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <p>June 8, 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="footer-wrapper">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="footer-firstgroup">
+                                <img src="Images/Logo-White.png" alt="">
+                                <p>Welcome to Villa Paradise, where luxury meets tranquility in the most breathtaking
+                                    locations
+                                    around the
+                                    world.</p>
+                                <div class="footer-text">
+                                    <input type="text" value="Your Email Address">
+                                    <div class="subscribe">
+                                        <i class="fa-regular fa-envelope-open"></i>
+                                        <p>Subscribe</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer-colgroup">
+                                <h4>Quick menu</h4>
+                                <nav>
+                                    <ul class="footer-menu">
+                                        <li><a href="">Home</a></li>
+                                        <li><a href="">About</a></li>
+                                        <li><a href="">Our Villas</a></li>
+                                        <li><a href="">Blog</a></li>
+                                        <li><a href="">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer-colgroup">
+                                <h4>Support</h4>
+                                <nav>
+                                    <ul class="footer-menu">
+                                        <li><a href="">FAQ</a></li>
+                                        <li><a href="">Privacy & Cookies</a></li>
+                                        <li><a href="">Legal</a></li>
+                                        <li><a href="">Acessibility</a></li>
+                                        <li><a href="">Sitemap</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer-colgroup">
+                                <h4>Contact Info</h4>
+                                <nav>
+                                    <ul class="footer-menu">
+                                        <li><a href="">A : Building W 13th Parks Suite 559, Denver</a></li>
+                                        <li><a href="">P : +0 (555) 123 45 67</a></li>
+                                        <li><a href="">E : altesa@support.com</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer-colgroup">
+                                <h4>Social Media</h4>
+                                <nav>
+                                    <ul class="footer-menu">
+                                        <li class="app-icon-fb">
+                                            <a href="">
+                                                <i class="fa-brands fa-facebook"></i> Facebook
+                                            </a>
+                                        </li>
+                                        <div class="app-icon-ig">
+                                            <li><a href="">
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                    Instagram</a></li>
+                                        </div>
+                                        <div class="app-icon-tw">
+
+                                            <li><a href="">
+                                                    <i class="fa-brands fa-square-twitter"></i>
+                                                    Twitter</a></li>
+                                        </div>
+                                        <div class="app-icon-yb">
+                                            <li><a href="">
+                                                    <i class="fa-brands fa-youtube"></i>
+                                                    Youtube</a></li>
+                                        </div>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="infor-1">Copyright © 2024 All rights reserved.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="infor-2">Villa & Resort Template Kit by codeinsolutions</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="top-button" id="scrollToTopBtn">^</div>
+        <script type="text/javascript">
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            scrollToTopBtn.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        </script>
+    </main>
+
+</body>
+
+</html>
